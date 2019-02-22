@@ -5,3 +5,10 @@ C:\Users\Alex\Desktop\Programming Stuff\Spring_2019\OS2\OS2_Producer\obj\Debug\O
 C:\Users\Alex\Desktop\Programming Stuff\Spring_2019\OS2\OS2_Producer\obj\Debug\OS2_Producer.csproj.CoreCompileInputs.cache
 C:\Users\Alex\Desktop\Programming Stuff\Spring_2019\OS2\OS2_Producer\obj\Debug\OS2_Producer.exe
 C:\Users\Alex\Desktop\Programming Stuff\Spring_2019\OS2\OS2_Producer\obj\Debug\OS2_Producer.pdb
+D:\Alex's School Documents\Files from Classes I've taken\Operating Systems 2\trunk\bin\Debug\OS2_Producer.exe.config
+D:\Alex's School Documents\Files from Classes I've taken\Operating Systems 2\trunk\bin\Debug\OS2_Producer.exe
+D:\Alex's School Documents\Files from Classes I've taken\Operating Systems 2\trunk\bin\Debug\OS2_Producer.pdb
+D:\Alex's School Documents\Files from Classes I've taken\Operating Systems 2\trunk\obj\Debug\OS2_Producer.csprojAssemblyReference.cache
+D:\Alex's School Documents\Files from Classes I've taken\Operating Systems 2\trunk\obj\Debug\OS2_Producer.csproj.CoreCompileInputs.cache
+D:\Alex's School Documents\Files from Classes I've taken\Operating Systems 2\trunk\obj\Debug\OS2_Producer.exe
+D:\Alex's School Documents\Files from Classes I've taken\Operating Systems 2\trunk\obj\Debug\OS2_Producer.pdb

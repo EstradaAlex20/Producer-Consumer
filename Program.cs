@@ -13,11 +13,12 @@ namespace OS2_Producer
 {
     class Program
     {
-        static HashSet<string> allLinks = new HashSet<string>();
+        static int NumOfTasks = 4;
+        static HashSet<string> links = new HashSet<string>();
         static HashSet<string> currentLinks = new HashSet<string>();
         static HashSet<string> deadLinks = new HashSet<string>();
-        static BlockingCollection<int> bc = new BlockingCollection<int>()
-        static Queue htmlQ = new Queue();
+        static BlockingCollection<Tuple<string, int>> linksCollection = new BlockingCollection<Tuple<string, int>>();
+        static BlockingCollection<Tuple<string, int>> pagesCollection = new BlockingCollection<Tuple<string, int>>();
         static object L = new object();
 
         static void Main(string[] args)
@@ -28,39 +29,23 @@ namespace OS2_Producer
 
             //consumer takes html, and outputs all the links in the
             //html back to the buffer for the producers
-
+            
             string url = args[0];
             int dist = Convert.ToInt32(args[1]);
+            linksCollection.Add(new Tuple<string, int>(url, 0));
+            List<Thread> CPUTasks = new List<Thread>();
+            List<Thread> NetworkTasks = new List<Thread>();
 
-            allLinks.Add(url);
-            currentLinks.Add(url);
-
-            //first round
-            new Thread(() =>{ Producer(url); }).Start();
-
-
-            List<Thread> T = new List<Thread>();
-            T.Add(new Thread(() => { Producer(url); }));
-            T[0].Start();
-            foreach (var t in T)
+            for(int i = 0; i < NumOfTasks; i++)
             {
-                t.Join();
+                NetworkTasks.Add(new Thread(() => { NetworkTask(); }));
+                CPUTasks.Add(new Thread(() => { CPUTask(); }));
+                NetworkTasks[i].Start();
+                CPUTasks[i].Start();
             }
 
             
-            for(int i = 0; i < dist; i++)
-            {
-                foreach(string link in links)
-                {
-                    T.Add(new Thread(() => { Producer(link); }));
-                }
 
-                foreach(Thread thred in T)
-                {
-                    thred.Start();
-                }
-            }
-            
 
         }
 
@@ -139,6 +124,39 @@ namespace OS2_Producer
      
      
      
+
+
+            links.Add(url);
+            currentLinks.Add(url);
+
+            //first round
+            new Thread(() =>{ Producer(url); }).Start();
+
+
+            List<Thread> T = new List<Thread>();
+            T.Add(new Thread(() => { Producer(url); }));
+            T[0].Start();
+            foreach (var t in T)
+            {
+                t.Join();
+            }
+
+            
+            for(int i = 0; i < dist; i++)
+            {
+                foreach(string link in deadLinks)
+                {
+                    //T.Add(new Thread(() => { Producer(link); }));
+                    Console.WriteLine(link);
+                }
+
+                foreach(Thread thred in T)
+                {
+                    //thred.Start();
+                }
+            }
+            Console.ReadLine();
+
      
      
      
