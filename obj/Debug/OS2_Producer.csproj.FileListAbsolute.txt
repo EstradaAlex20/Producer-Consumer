@@ -1,0 +1,7 @@
+C:\Users\Alex\Desktop\Programming Stuff\Spring_2019\OS2\OS2_Producer\bin\Debug\OS2_Producer.exe.config
+C:\Users\Alex\Desktop\Programming Stuff\Spring_2019\OS2\OS2_Producer\bin\Debug\OS2_Producer.exe
+C:\Users\Alex\Desktop\Programming Stuff\Spring_2019\OS2\OS2_Producer\bin\Debug\OS2_Producer.pdb
+C:\Users\Alex\Desktop\Programming Stuff\Spring_2019\OS2\OS2_Producer\obj\Debug\OS2_Producer.csprojAssemblyReference.cache
+C:\Users\Alex\Desktop\Programming Stuff\Spring_2019\OS2\OS2_Producer\obj\Debug\OS2_Producer.csproj.CoreCompileInputs.cache
+C:\Users\Alex\Desktop\Programming Stuff\Spring_2019\OS2\OS2_Producer\obj\Debug\OS2_Producer.exe
+C:\Users\Alex\Desktop\Programming Stuff\Spring_2019\OS2\OS2_Producer\obj\Debug\OS2_Producer.pdb
