@@ -14,6 +14,8 @@ namespace OS2_Producer
     class Program
     {
         static int NumOfTasks = 4;
+        static int dist = 0;
+
         static HashSet<string> links = new HashSet<string>();
         static HashSet<string> currentLinks = new HashSet<string>();
         static HashSet<string> deadLinks = new HashSet<string>();
@@ -31,7 +33,7 @@ namespace OS2_Producer
             //html back to the buffer for the producers
             
             string url = args[0];
-            int dist = Convert.ToInt32(args[1]);
+            dist = Convert.ToInt32(args[1]);
             linksCollection.Add(new Tuple<string, int>(url, 0));
             List<Thread> CPUTasks = new List<Thread>();
             List<Thread> NetworkTasks = new List<Thread>();
@@ -43,43 +45,27 @@ namespace OS2_Producer
                 NetworkTasks[i].Start();
                 CPUTasks[i].Start();
             }
-
-            
-
-
         }
 
-        static void Producer(string url)
+
+        static void NetworkTask()
         {
-            WebClient w = new WebClient();
-            Uri address = new Uri(url);
-            string result;
-            try
-            {
-                result = w.DownloadString(address);
-            }
-            catch
-            {
-                lock (L)
-                {
-                    links.Remove(url);
-                    deadLinks.Add(url + " is broken.");
-                }
-                return;
-                
-            }
             Regex rex = new Regex(@"<a\s+(?:[^>]*?\s+)?href=([\""'])(.*?)\1", RegexOptions.IgnoreCase);
-            MatchCollection MC = rex.Matches(result);
-            foreach(Match M in MC)
+            while(true)
             {
-                string s = M.Groups[2].Value;
-                //int start = M.Groups[2].Index;
-                lock (L)
-                {
-                    links.Add(s);
-                }
+
             }
+
+
+
         }
+
+        static void CPUTask()
+        {
+
+        }
+
+        
     }
 }
 
@@ -122,7 +108,37 @@ namespace OS2_Producer
      
      
      
-     
+     static void Producer(string url)
+        {
+            WebClient w = new WebClient();
+            Uri address = new Uri(url);
+            string result;
+            try
+            {
+                result = w.DownloadString(address);
+            }
+            catch
+            {
+                lock (L)
+                {
+                    links.Remove(url);
+                    deadLinks.Add(url + " is broken.");
+                }
+                return;
+                
+            }
+            Regex rex = new Regex(@"<a\s+(?:[^>]*?\s+)?href=([\""'])(.*?)\1", RegexOptions.IgnoreCase);
+            MatchCollection MC = rex.Matches(result);
+            foreach(Match M in MC)
+            {
+                string s = M.Groups[2].Value;
+                //int start = M.Groups[2].Index;
+                lock (L)
+                {
+                    links.Add(s);
+                }
+            }
+        }
      
 
 
