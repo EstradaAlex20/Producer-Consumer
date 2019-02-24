@@ -50,11 +50,12 @@ namespace OS2_Producer
 
         static void NetworkTask()
         {
-            Regex rex = new Regex(@"<a\s+(?:[^>]*?\s+)?href=([\""'])(.*?)\1", RegexOptions.IgnoreCase);
-            while(true)
-            {
 
-            }
+            WebClient w = new WebClient();
+            Uri address = new Uri(url);
+            string result;
+
+
 
 
 
@@ -62,7 +63,16 @@ namespace OS2_Producer
 
         static void CPUTask()
         {
-
+            Regex rex = new Regex(@"<a\s+(?:[^>]*?\s+)?href=([\""'])(.*?)\1", RegexOptions.IgnoreCase);
+            while (true)
+            {
+                Tuple<string, int> linkData = linksCollection.Take();
+                MatchCollection MC = rex.Matches(linkData.Item1);
+                foreach (Match M in MC)
+                {
+                    string s = M.Groups[2].Value;
+                }
+            }
         }
 
         
