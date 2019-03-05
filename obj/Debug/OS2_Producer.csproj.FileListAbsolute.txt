@@ -12,3 +12,10 @@ D:\Alex's School Documents\Files from Classes I've taken\Operating Systems 2\tru
 D:\Alex's School Documents\Files from Classes I've taken\Operating Systems 2\trunk\obj\Debug\OS2_Producer.csproj.CoreCompileInputs.cache
 D:\Alex's School Documents\Files from Classes I've taken\Operating Systems 2\trunk\obj\Debug\OS2_Producer.exe
 D:\Alex's School Documents\Files from Classes I've taken\Operating Systems 2\trunk\obj\Debug\OS2_Producer.pdb
+C:\Users\Alex\Desktop\Programming Stuff\Spring_2019\OS2\Producer&Consumer\trunk\bin\Debug\OS2_Producer.exe.config
+C:\Users\Alex\Desktop\Programming Stuff\Spring_2019\OS2\Producer&Consumer\trunk\bin\Debug\OS2_Producer.exe
+C:\Users\Alex\Desktop\Programming Stuff\Spring_2019\OS2\Producer&Consumer\trunk\bin\Debug\OS2_Producer.pdb
+C:\Users\Alex\Desktop\Programming Stuff\Spring_2019\OS2\Producer&Consumer\trunk\obj\Debug\OS2_Producer.csprojAssemblyReference.cache
+C:\Users\Alex\Desktop\Programming Stuff\Spring_2019\OS2\Producer&Consumer\trunk\obj\Debug\OS2_Producer.csproj.CoreCompileInputs.cache
+C:\Users\Alex\Desktop\Programming Stuff\Spring_2019\OS2\Producer&Consumer\trunk\obj\Debug\OS2_Producer.exe
+C:\Users\Alex\Desktop\Programming Stuff\Spring_2019\OS2\Producer&Consumer\trunk\obj\Debug\OS2_Producer.pdb
