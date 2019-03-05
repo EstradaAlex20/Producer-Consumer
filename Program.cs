@@ -90,8 +90,6 @@ namespace ProducerLabpt2
                 meetsConditions = false;
                 lock (L)
                 {
-                    Console.Write("Num of Net tasks: ");
-                    Console.WriteLine(numOfNetTasks);
                     if (netTasks.Count != 0) // is there any available tasks?
                     { 
                         myTask = netTasks.Dequeue();
@@ -99,6 +97,7 @@ namespace ProducerLabpt2
                         {
                             PoisonPills();
                             Console.WriteLine("Network Thread Ended(recieved PP)");
+                            Monitor.PulseAll(L);
                             return;
                         }
                         else
@@ -180,8 +179,6 @@ namespace ProducerLabpt2
                 meetsConditions = false;
                 lock(L)
                 {
-                    Console.Write("Num of CPU tasks: ");
-                    Console.WriteLine(numOfCpuTasks);
                     if (CpuTasks.Count != 0)
                     {
                         
@@ -244,10 +241,8 @@ namespace ProducerLabpt2
                                     }
                                 }
                             }
-                          
                         }
                     }
-                    
                 }
 
                 lock (L)
@@ -257,8 +252,7 @@ namespace ProducerLabpt2
                         numOfCpuTasks--;
                         Monitor.PulseAll(L);
                     }
-                }
-                
+                }  
             }
         }
     }
